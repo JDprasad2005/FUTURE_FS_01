@@ -1,19 +1,28 @@
-const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"];
+import './Skills.css';
 
 function Skills() {
+  const skills = [
+    { name: "HTML", icon: "🌐" },
+    { name: "CSS", icon: "🎨" },
+    { name: "JavaScript", icon: "⚡" },
+    { name: "React", icon: "⚛️" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "MongoDB", icon: "🍃" }
+  ];
+
   return (
-    <section className="container py-5" id="skills">
-      <h2>Skills</h2>
-      <div className="row mt-3">
-        {skills.map((skill, index) => (
-          <div className="col-md-4 mb-3" key={index}>
-            <div className="card text-center">
-              <div className="card-body">
-                <h5 className="card-title">{skill}</h5>
-              </div>
+    <section className="skills" id="skills">
+      <div className="skills-container">
+        <h2 className="skills-heading">Skills</h2>
+        
+        <div className="skills-grid">
+          {skills.map((skill, index) => (
+            <div className="skill-card" key={index}>
+              <div className="skill-icon">{skill.icon}</div>
+              <h3 className="skill-name">{skill.name}</h3>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

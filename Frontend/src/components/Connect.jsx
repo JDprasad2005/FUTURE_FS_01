@@ -1,36 +1,49 @@
+import './Connect.css';
+
 function Connect() {
   return (
-    <section className="container py-5 text-center" id="connect">
-      <h2 className="mb-4">Connect With Me</h2>
+    <section className="connect" id="connect">
+      <h2 className="connect-title">Connect / Get in Touch</h2>
 
-      <p className="text-muted mb-4">
-        You can reach me through these platforms
-      </p>
-
-      <div className="d-flex justify-content-center gap-3 flex-wrap">
-        <a
-          href="https://www.linkedin.com/in/your-linkedin"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-outline-primary px-4"
-        >
-          LinkedIn
+      <div className="connect-grid">
+        {/* Email Card */}
+        <a href="mailto:adinahawaldar895@gmail.com" className="connect-card">
+          <div className="card-icon email-icon">📧</div>
+          <div className="card-content">
+            <h3>Email</h3>
+            <p className="card-id">adinahawaldar895@gmail.com</p>
+            <span className="card-action">Send message</span>
+          </div>
         </a>
 
-        <a
-          href="https://github.com/your-github"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-outline-dark px-4"
-        >
-          GitHub
+        {/* LinkedIn Card */}
+        <a href="https://linkedin.com/in/adinahawaldar" target="_blank" rel="noopener noreferrer" className="connect-card">
+          <div className="card-icon linkedin-icon">💼</div>
+          <div className="card-content">
+            <h3>LinkedIn</h3>
+            <p className="card-id">in/adinahawaldar</p>
+            <span className="card-action">Connect</span>
+          </div>
         </a>
 
-        <a
-          href="mailto:youremail@gmail.com"
-          className="btn btn-outline-success px-4"
-        >
-          Email
+        {/* GitHub Card */}
+        <a href="https://github.com/adina" target="_blank" rel="noopener noreferrer" className="connect-card">
+          <div className="card-icon github-icon">🐙</div>
+          <div className="card-content">
+            <h3>GitHub</h3>
+            <p className="card-id">@adina</p>
+            <span className="card-action">View code</span>
+          </div>
+        </a>
+
+        {/* Twitter/X Card */}
+        <a href="https://twitter.com/adina" target="_blank" rel="noopener noreferrer" className="connect-card">
+          <div className="card-icon twitter-icon">🐦</div>
+          <div className="card-content">
+            <h3>Twitter</h3>
+            <p className="card-id">@adina</p>
+            <span className="card-action">Follow</span>
+          </div>
         </a>
       </div>
     </section>
