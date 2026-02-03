@@ -10,7 +10,6 @@ function Dashboard() {
         <li><Link to="/admin/skills">Manage Skills</Link></li>
         <li><Link to="/admin/projects">Manage Projects</Link></li>
         <li><Link to="/admin/connect">Manage Connect Links</Link></li>
-
       </ul>
     </div>
   );

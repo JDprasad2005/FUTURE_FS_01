@@ -13,7 +13,7 @@ function Connect() {
 
   return (
     <section className="connect" id="connect">
-      <h2 className="connect-title">Connect / Get in Touch</h2>
+      <h2 className="connect-title">CONNECT / GET IN TOUCH</h2>
 
       <div className="connect-grid">
         {links.map(link => (

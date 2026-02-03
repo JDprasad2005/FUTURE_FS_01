@@ -6,6 +6,8 @@ function AdminProjects() {
   const [form, setForm] = useState({
     title: "",
     description: "",
+    image: "",
+    techStack: "",
     githubLink: "",
     liveLink: ""
   });
@@ -18,11 +20,26 @@ function AdminProjects() {
 
   async function addProject(e) {
     e.preventDefault();
+
+    const payload = {
+      ...form,
+      techStack: form.techStack.split(",")
+    };
+
     await authFetch("http://localhost:5000/api/projects", {
       method: "POST",
-      body: JSON.stringify(form)
+      body: JSON.stringify(payload)
     });
-    setForm({ title: "", description: "", githubLink: "", liveLink: "" });
+
+    setForm({
+      title: "",
+      description: "",
+      image: "",
+      techStack: "",
+      githubLink: "",
+      liveLink: ""
+    });
+
     fetchProjects();
   }
 
@@ -42,25 +59,41 @@ function AdminProjects() {
       <h2>Manage Projects</h2>
 
       <form onSubmit={addProject}>
-        <input placeholder="Title" value={form.title}
+        <input placeholder="Title"
+          value={form.title}
           onChange={e => setForm({ ...form, title: e.target.value })} />
-        <input placeholder="Description" value={form.description}
+
+        <textarea placeholder="Description"
+          value={form.description}
           onChange={e => setForm({ ...form, description: e.target.value })} />
-        <input placeholder="GitHub Link" value={form.githubLink}
+
+        <input placeholder="Image URL or /project1.jpg"
+          value={form.image}
+          onChange={e => setForm({ ...form, image: e.target.value })} />
+
+        <input placeholder="Tech stack (comma separated)"
+          value={form.techStack}
+          onChange={e => setForm({ ...form, techStack: e.target.value })} />
+
+        <input placeholder="GitHub link"
+          value={form.githubLink}
           onChange={e => setForm({ ...form, githubLink: e.target.value })} />
-        <input placeholder="Live Link" value={form.liveLink}
+
+        <input placeholder="Live site link"
+          value={form.liveLink}
           onChange={e => setForm({ ...form, liveLink: e.target.value })} />
+
         <button>Add Project</button>
       </form>
 
-      <ul>
-        {projects.map(p => (
-          <li key={p._id}>
-            {p.title}
-            <button onClick={() => deleteProject(p._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <hr />
+
+      {projects.map(p => (
+        <div key={p._id}>
+          <strong>{p.title}</strong>
+          <button onClick={() => deleteProject(p._id)}>Delete</button>
+        </div>
+      ))}
     </div>
   );
 }

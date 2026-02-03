@@ -26,7 +26,7 @@ function Hero() {
             Email me
           </a>
           <a href={profile.resumeUrl} className="btn btn-secondary" download>
-            Download Resume
+            View Resume
           </a>
         </div>
       </div>
