@@ -6,7 +6,7 @@
   background-color: #f8f7f9; 
   display: flex;
   align-items: center;
-  padding: 120px 10% 60px 10%; 
+  padding: 120px 10% 80px 10%; 
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -63,9 +63,8 @@
 
 .hero-buttons {
   display: flex;
-  flex-direction: row; /* Horizontal alignment */
+  flex-direction: row;
   gap: 15px;
-  flex-wrap: wrap;    /* Allows wrapping only if the screen is extremely narrow */
 }
 
 .btn-email {
@@ -78,7 +77,6 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
-  transition: 0.3s;
   border: 1px solid #000000;
 }
 
@@ -93,23 +91,15 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
-  transition: 0.3s;
-}
-
-.hero-socials {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-left: 40px;
 }
 
 /* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
   .hero-section {
-    /* Clears the taller mobile navbar */
-    padding: 180px 8% 40px 8%; 
+    padding: 180px 10% 40px 10%; 
     display: block;
-    height: auto;
+    height: auto;      /* Prevents full-screen forced gap */
+    min-height: auto;  /* Allows section to wrap tightly around content */
   }
 
   .hero-container {
@@ -118,29 +108,22 @@
 
   .hero-name {
     font-size: 2.8rem;
-    text-align: left;
-  }
-
-  .hero-subtitle-container {
-    justify-content: flex-start;
   }
 
   .hero-description {
-    text-align: left;
-    margin-left: 0;
     font-size: 1rem;
-    max-width: 100%;
+    margin-bottom: 30px;
   }
 
   .hero-buttons {
-    flex-direction: row; /* Keeps them on the SAME line */
-    justify-content: flex-start; /* Aligns them to the left */
-    gap: 12px;
+    flex-direction: row; /* Stays on one line */
+    justify-content: flex-start;
+    gap: 10px;
   }
 
   .btn-email, .btn-resume {
-    width: auto; /* Buttons only take up space needed by text */
-    padding: 12px 20px; /* Slightly smaller padding for better mobile fit */
+    width: auto; 
+    padding: 12px 18px;
     font-size: 0.85rem;
   }
 
