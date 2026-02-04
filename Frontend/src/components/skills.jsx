@@ -5,7 +5,7 @@ function Skills() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/skills")
+    fetch("https://my-porfolio-6sf0.onrender.com/api/skills")
       .then(res => res.json())
       .then(data => setSkills(data))
       .catch(err => console.error("Failed to load skills", err));

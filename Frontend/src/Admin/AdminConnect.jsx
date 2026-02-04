@@ -13,7 +13,7 @@ function AdminConnect() {
   });
 
   async function fetchLinks() {
-    const res = await fetch("http://localhost:5000/api/connect");
+    const res = await fetch("https://my-porfolio-6sf0.onrender.com/api/connect");
     const data = await res.json();
     setLinks(data);
   }
@@ -22,7 +22,7 @@ function AdminConnect() {
     e.preventDefault();
     if (!form.platform || !form.url) return alert("Platform and URL are required");
 
-    await authFetch("http://localhost:5000/api/connect", {
+    await authFetch("https://my-porfolio-6sf0.onrender.com/api/connect", {
       method: "POST",
       body: JSON.stringify(form)
     });
@@ -32,7 +32,7 @@ function AdminConnect() {
 
   async function deleteLink(id) {
     if (window.confirm("Remove this connection link?")) {
-      await authFetch(`http://localhost:5000/api/connect/${id}`, {
+      await authFetch(`https://my-porfolio-6sf0.onrender.com/api/connect/${id}`, {
         method: "DELETE"
       });
       fetchLinks();

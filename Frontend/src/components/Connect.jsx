@@ -18,7 +18,7 @@ function Connect() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/connect")
+    fetch("https://my-porfolio-6sf0.onrender.com/api/connect")
       .then(res => res.json())
       .then(data => setLinks(data))
       .catch(err => console.error("Failed to load connect links", err));

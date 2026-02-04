@@ -5,7 +5,7 @@ function About() {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/profile")
+    fetch("https://my-porfolio-6sf0.onrender.com/api/profile")
       .then(res => res.json())
       .then(data => setProfile(data))
       .catch(err => console.error("Failed to load profile", err));

@@ -15,7 +15,7 @@ function AdminProjects() {
   });
 
   async function fetchProjects() {
-    const res = await fetch("http://localhost:5000/api/projects");
+    const res = await fetch("https://my-porfolio-6sf0.onrender.com/api/projects");
     const data = await res.json();
     setProjects(data);
   }
@@ -27,7 +27,7 @@ function AdminProjects() {
       techStack: form.techStack.split(",").map(item => item.trim())
     };
 
-    await authFetch("http://localhost:5000/api/projects", {
+    await authFetch("https://my-porfolio-6sf0.onrender.com/api/projects", {
       method: "POST",
       body: JSON.stringify(payload)
     });
@@ -45,7 +45,7 @@ function AdminProjects() {
 
   async function deleteProject(id) {
     if (window.confirm("Are you sure you want to delete this project?")) {
-      await authFetch(`http://localhost:5000/api/projects/${id}`, {
+      await authFetch(`https://my-porfolio-6sf0.onrender.com/${id}`, {
         method: "DELETE"
       });
       fetchProjects();

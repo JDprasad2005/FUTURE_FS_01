@@ -16,14 +16,14 @@ function AdminProfile() {
   });
 
   async function fetchProfile() {
-    const res = await fetch("http://localhost:5000/api/profile");
+    const res = await fetch("https://my-porfolio-6sf0.onrender.com/api/profile");
     const data = await res.json();
     if (data) setProfile(data);
   }
 
   async function saveProfile(e) {
     e.preventDefault();
-    await authFetch("http://localhost:5000/api/profile", {
+    await authFetch("https://my-porfolio-6sf0.onrender.com/api/profile", {
       method: "POST",
       body: JSON.stringify(profile)
     });

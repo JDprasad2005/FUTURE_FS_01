@@ -5,7 +5,7 @@ function Footer() {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/profile")
+    fetch("https://my-porfolio-6sf0.onrender.com/api/profile")
       .then(res => res.json())
       .then(data => {
         // handle array response

@@ -8,7 +8,7 @@ function AdminSkills() {
   const [name, setName] = useState("");
 
   async function fetchSkills() {
-    const res = await fetch("http://localhost:5000/api/skills");
+    const res = await fetch("https://my-porfolio-6sf0.onrender.com/api/skills");
     const data = await res.json();
     setSkills(data);
   }
@@ -17,7 +17,7 @@ function AdminSkills() {
     e.preventDefault();
     if (!name.trim()) return;
     
-    await authFetch("http://localhost:5000/api/skills", {
+    await authFetch("https://my-porfolio-6sf0.onrender.com/api/skills", {
       method: "POST",
       body: JSON.stringify({ name })
     });
@@ -27,7 +27,7 @@ function AdminSkills() {
 
   async function deleteSkill(id) {
     if (window.confirm("Delete this skill?")) {
-      await authFetch(`http://localhost:5000/api/skills/${id}`, {
+      await authFetch(`https://my-porfolio-6sf0.onrender.com/api/skills/${id}`, {
         method: "DELETE"
       });
       fetchSkills();
